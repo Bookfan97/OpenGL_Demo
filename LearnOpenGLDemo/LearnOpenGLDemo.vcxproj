@@ -78,12 +78,12 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)External\GLFW\include\GLFW;$(ProjectDir)External\GLAD\include\glad;$(ProjectDir)External\GLAD\include\khr;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)External\GLFW\include\GLFW;$(ProjectDir)External\GLAD\include\glad;$(ProjectDir)External\ImGUI;$(ProjectDir)External\GLAD\include\khr;$(ProjectDir)External\gl3w\GL;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)External\GLFW\lib-vc2019;$(ProjectDir)External\GLAD\src;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(ProjectDir)External\GLFW\include\GLFW;$(ProjectDir)External\GLAD\include\glad;$(ProjectDir)External\GLAD\include\khr;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)External\GLFW\include\GLFW;$(ProjectDir)External\GLAD\include\glad;$(ProjectDir)External\ImGUI;$(ProjectDir)External\GLAD\include\khr;$(ProjectDir)External\gl3w\GL;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)External\GLFW\lib-vc2019;$(ProjectDir)External\GLAD\src;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -146,10 +146,26 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="External\GLAD\include\glad\glad.h" />
+    <ClInclude Include="External\ImGUI\imconfig.h" />
+    <ClInclude Include="External\ImGUI\imgui.h" />
+    <ClInclude Include="External\ImGUI\imgui_impl_glfw.h" />
+    <ClInclude Include="External\ImGUI\imgui_impl_opengl3.h" />
+    <ClInclude Include="External\ImGUI\imgui_internal.h" />
+    <ClInclude Include="External\ImGUI\imstb_rectpack.h" />
+    <ClInclude Include="External\ImGUI\imstb_textedit.h" />
+    <ClInclude Include="External\ImGUI\imstb_truetype.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="External\gl3w\GL\gl3w.c" />
     <ClCompile Include="External\GLAD\src\glad.c" />
+    <ClCompile Include="External\ImGUI\imgui.cpp" />
+    <ClCompile Include="External\ImGUI\imgui_demo.cpp" />
+    <ClCompile Include="External\ImGUI\imgui_draw.cpp" />
+    <ClCompile Include="External\ImGUI\imgui_impl_glfw.cpp" />
+    <ClCompile Include="External\ImGUI\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="External\ImGUI\imgui_tables.cpp" />
+    <ClCompile Include="External\ImGUI\imgui_widgets.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

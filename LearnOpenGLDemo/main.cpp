@@ -4,6 +4,11 @@
 
 #include "glad.h"
 #include "glfw3.h"
+//#include "gl3w.h"
+#include "gl/GL.h"
+#include "imgui.h"
+#include "imgui_impl_glfw.h"
+#include "imgui_impl_opengl3.h"
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
@@ -18,6 +23,8 @@ void processInput(GLFWwindow* window)
 	}
 }
 
+//const char* glsl_version;
+
 int main()
 {
 	//Instantiate window
@@ -26,6 +33,7 @@ int main()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
+	
 	//Create window object
 	GLFWwindow* window = glfwCreateWindow(800, 600, "LearnOpenGL", NULL, NULL);
 	if (window == NULL)
@@ -43,6 +51,16 @@ int main()
 		return -1;
 	}
 
+	 //// Setup Dear ImGui context
+  //  IMGUI_CHECKVERSION();
+  //  ImGui::CreateContext();
+  //  ImGuiIO &io = ImGui::GetIO();
+  //  // Setup Platform/Renderer bindings
+  //  ImGui_ImplGlfw_InitForOpenGL(window, true);
+  //  ImGui_ImplOpenGL3_Init(glsl_version);
+  //  // Setup Dear ImGui style
+  //  ImGui::StyleColorsDark();
+	
 	//Create viewport
 	glViewport(0, 0, 800, 600);
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);

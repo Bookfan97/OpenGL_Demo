@@ -13,20 +13,74 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Resource Files\ImGUI">
+      <UniqueIdentifier>{aad8512d-7f0c-48fc-9f83-652d6f742aea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\glad">
+      <UniqueIdentifier>{75bf1605-ed3e-4a36-b743-c46172c70307}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="External\ImGUI\imgui_impl_glfw.h">
+      <Filter>Resource Files\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="External\ImGUI\imgui_impl_opengl3.h">
+      <Filter>Resource Files\ImGUI</Filter>
+    </ClInclude>
     <ClInclude Include="External\GLAD\include\glad\glad.h">
-      <Filter>Resource Files</Filter>
+      <Filter>Resource Files\glad</Filter>
+    </ClInclude>
+    <ClInclude Include="External\ImGUI\imgui.h">
+      <Filter>Resource Files\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="External\ImGUI\imconfig.h">
+      <Filter>Resource Files\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="External\ImGUI\imgui_internal.h">
+      <Filter>Resource Files\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="External\ImGUI\imstb_rectpack.h">
+      <Filter>Resource Files\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="External\ImGUI\imstb_textedit.h">
+      <Filter>Resource Files\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="External\ImGUI\imstb_truetype.h">
+      <Filter>Resource Files\ImGUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="External\ImGUI\imgui_impl_glfw.cpp">
+      <Filter>Resource Files\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="External\ImGUI\imgui_impl_opengl3.cpp">
+      <Filter>Resource Files\ImGUI</Filter>
+    </ClCompile>
     <ClCompile Include="External\GLAD\src\glad.c">
+      <Filter>Resource Files\glad</Filter>
+    </ClCompile>
+    <ClCompile Include="External\ImGUI\imgui.cpp">
+      <Filter>Resource Files\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="External\ImGUI\imgui_demo.cpp">
+      <Filter>Resource Files\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="External\ImGUI\imgui_draw.cpp">
+      <Filter>Resource Files\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="External\ImGUI\imgui_tables.cpp">
+      <Filter>Resource Files\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="External\ImGUI\imgui_widgets.cpp">
+      <Filter>Resource Files\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="External\gl3w\GL\gl3w.c">
       <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>
