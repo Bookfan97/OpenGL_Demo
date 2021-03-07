@@ -154,7 +154,6 @@
     <ClInclude Include="External\ImGUI\imstb_rectpack.h" />
     <ClInclude Include="External\ImGUI\imstb_textedit.h" />
     <ClInclude Include="External\ImGUI\imstb_truetype.h" />
-    <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="External\gl3w\GL\gl3w.c" />
@@ -167,6 +166,9 @@
     <ClCompile Include="External\ImGUI\imgui_tables.cpp" />
     <ClCompile Include="External\ImGUI\imgui_widgets.cpp" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vertex.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

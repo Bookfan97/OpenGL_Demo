@@ -19,11 +19,11 @@
     <Filter Include="Resource Files\glad">
       <UniqueIdentifier>{75bf1605-ed3e-4a36-b743-c46172c70307}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Shaders">
+      <UniqueIdentifier>{b4f15fe6-1c2e-4bbe-bb1c-f12a8c1630e1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="main.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="External\ImGUI\imgui_impl_glfw.h">
       <Filter>Resource Files\ImGUI</Filter>
     </ClInclude>
@@ -83,5 +83,10 @@
     <ClCompile Include="External\gl3w\GL\gl3w.c">
       <Filter>Resource Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vertex.glsl">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>
