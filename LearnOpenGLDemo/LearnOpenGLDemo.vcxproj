@@ -154,6 +154,7 @@
     <ClInclude Include="External\ImGUI\imstb_rectpack.h" />
     <ClInclude Include="External\ImGUI\imstb_textedit.h" />
     <ClInclude Include="External\ImGUI\imstb_truetype.h" />
+    <ClInclude Include="External\stb_image.h" />
     <ClInclude Include="Shader.h" />
   </ItemGroup>
   <ItemGroup>
