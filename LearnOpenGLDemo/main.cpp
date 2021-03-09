@@ -7,7 +7,9 @@
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
-
+#include "External/glm/glm.hpp"
+#include "External/glm/gtc/matrix_transform.hpp"
+#include "External/glm/gtc/type_ptr.hpp"
 #include <iostream>
 
 #include "Shader.h"
@@ -22,6 +24,8 @@ const unsigned int SCR_HEIGHT = 600;
 //Image settings
 int width, height, nrChannels;
 unsigned char* data = stbi_load("container.jpg", &width, &height, &nrChannels, 0);
+float rotation = 0.0;
+float translation[] = { 0.0, 0.0 };
 
 int main()
 {
@@ -120,7 +124,7 @@ int main()
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	// load image, create texture and generate mipmaps
-	stbi_set_flip_vertically_on_load(true);  
+	stbi_set_flip_vertically_on_load(true);
 	data = stbi_load("Textures/awesomeface.png", &width, &height, &nrChannels, 0);
 	if (data)
 	{
@@ -151,10 +155,10 @@ int main()
 	glViewport(0, 0, 800, 600);
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
-	ourShader.use(); // don't forget to activate the shader before setting uniforms!  
-glUniform1i(glGetUniformLocation(ourShader.ID, "texture1"), 0); // set it manually
-ourShader.setInt("texture2", 1); // or with shader class
-	
+	ourShader.use(); 
+    ourShader.setInt("texture1", 0);
+    ourShader.setInt("texture2", 1);
+
 	while (!glfwWindowShouldClose(window))
 	{
 		//Input
@@ -165,16 +169,29 @@ ourShader.setInt("texture2", 1); // or with shader class
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		   glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, texture1);
-        glActiveTexture(GL_TEXTURE1);
-        glBindTexture(GL_TEXTURE_2D, texture2);
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, texture1);
+		glActiveTexture(GL_TEXTURE1);
+		glBindTexture(GL_TEXTURE_2D, texture2);
+
+		//Transforms
+		glm::mat4 transform = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
+        transform = glm::translate(transform, glm::vec3(translation[0], translation[1], 0.0f));
+		if (rotation==0)
+		{
+			rotation=0.001f;
+		}
+        transform = glm::rotate(transform, rotation, glm::vec3(0.0f, 0.0f, rotation));
 
 		// render the triangle
-		ourShader.use();
-		glBindVertexArray(VAO);
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        ourShader.use();
+        unsigned int transformLoc = glGetUniformLocation(ourShader.ID, "transform");
+        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(transform));
 
+		// render container
+        glBindVertexArray(VAO);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+		
 		// feed inputs to dear imgui, start new frame
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
@@ -182,9 +199,8 @@ ourShader.setInt("texture2", 1); // or with shader class
 
 		// render your GUI
 		ImGui::Begin("Triangle Position/Color");
-		static float rotation = 0.0;
+		
 		ImGui::SliderFloat("rotation", &rotation, 0, 2 * 3.14);
-		static float translation[] = { 0.0, 0.0 };
 		ImGui::SliderFloat2("position", translation, -1.0, 1.0);
 
 		ImGui::End();

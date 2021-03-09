@@ -22,6 +22,9 @@
     <Filter Include="Source Files\Shaders">
       <UniqueIdentifier>{b4f15fe6-1c2e-4bbe-bb1c-f12a8c1630e1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\glm">
+      <UniqueIdentifier>{a7c87a00-052a-4ffe-88ab-8a4c41545aa4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="External\ImGUI\imgui_impl_glfw.h">
@@ -56,6 +59,15 @@
     </ClInclude>
     <ClInclude Include="External\stb_image.h">
       <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="External\glm\glm.hpp">
+      <Filter>Resource Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="External\glm\gtc\matrix_transform.hpp">
+      <Filter>Resource Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="External\glm\gtc\type_ptr.hpp">
+      <Filter>Resource Files\glm</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -78,12 +78,12 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)External\GLFW\include\GLFW;$(ProjectDir)External\GLAD\include\glad;$(ProjectDir)External\ImGUI;$(ProjectDir)External\GLAD\include\khr;$(ProjectDir)External\gl3w\GL;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)External\GLFW\include\GLFW;$(ProjectDir)External\GLAD\include\glad;$(ProjectDir)External\ImGUI;$(ProjectDir)External\GLAD\include\khr;$(ProjectDir)External\GLAD\include\glm;$(ProjectDir)External\gl3w\GL;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)External\GLFW\lib-vc2019;$(ProjectDir)External\GLAD\src;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(ProjectDir)External\GLFW\include\GLFW;$(ProjectDir)External\GLAD\include\glad;$(ProjectDir)External\ImGUI;$(ProjectDir)External\GLAD\include\khr;$(ProjectDir)External\gl3w\GL;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)External\GLFW\include\GLFW;$(ProjectDir)External\GLAD\include\glad;$(ProjectDir)External\ImGUI;$(ProjectDir)External\GLAD\include\khr;$(ProjectDir)External\GLAD\include\glm;$(ProjectDir)External\gl3w\GL;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)External\GLFW\lib-vc2019;$(ProjectDir)External\GLAD\src;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -146,6 +146,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="External\GLAD\include\glad\glad.h" />
+    <ClInclude Include="External\glm\glm.hpp" />
+    <ClInclude Include="External\glm\gtc\matrix_transform.hpp" />
+    <ClInclude Include="External\glm\gtc\type_ptr.hpp" />
     <ClInclude Include="External\ImGUI\imconfig.h" />
     <ClInclude Include="External\ImGUI\imgui.h" />
     <ClInclude Include="External\ImGUI\imgui_impl_glfw.h" />
