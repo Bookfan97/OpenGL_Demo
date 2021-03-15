@@ -145,6 +145,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="External\GLAD\include\glad\glad.h" />
     <ClInclude Include="External\glm\glm.hpp" />
     <ClInclude Include="External\glm\gtc\matrix_transform.hpp" />
@@ -161,6 +162,7 @@
     <ClInclude Include="Shader.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="External\gl3w\GL\gl3w.c" />
     <ClCompile Include="External\GLAD\src\glad.c" />
     <ClCompile Include="External\ImGUI\imgui.cpp" />
