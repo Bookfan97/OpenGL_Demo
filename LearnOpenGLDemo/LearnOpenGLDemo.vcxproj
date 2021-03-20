@@ -160,6 +160,7 @@
     <ClInclude Include="External\ImGUI\imstb_truetype.h" />
     <ClInclude Include="External\stb_image.h" />
     <ClInclude Include="Shader.h" />
+    <ClInclude Include="Utility.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
