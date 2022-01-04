@@ -109,10 +109,28 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="shader.vert">
+    <None Include="resources\shaders\7.4.camera.fs">
       <Filter>Source Files\Shaders</Filter>
     </None>
-    <None Include="shader.frag">
+    <None Include="resources\shaders\7.4.camera.vs">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="resources\shaders\shader.frag">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="resources\shaders\shader.vert">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="resources\shaders\colors.fs">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="resources\shaders\colors.vs">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="resources\shaders\light_cube.fs">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="resources\shaders\light_cube.vs">
       <Filter>Source Files\Shaders</Filter>
     </None>
   </ItemGroup>

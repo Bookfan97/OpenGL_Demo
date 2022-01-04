@@ -175,8 +175,14 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="shader.frag" />
-    <None Include="shader.vert" />
+    <None Include="resources\shaders\7.4.camera.fs" />
+    <None Include="resources\shaders\7.4.camera.vs" />
+    <None Include="resources\shaders\colors.fs" />
+    <None Include="resources\shaders\colors.vs" />
+    <None Include="resources\shaders\light_cube.fs" />
+    <None Include="resources\shaders\light_cube.vs" />
+    <None Include="resources\shaders\shader.frag" />
+    <None Include="resources\shaders\shader.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
